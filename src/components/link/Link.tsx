@@ -8,11 +8,9 @@ function Link({ href, children, ...props }: LinkProps) {
   const buttonStyles = useStyleConfig('Button', { variant: 'a' });
 
   return (
-    <NextLink href={href} passHref legacyBehavior>
-      <ChakraLink __css={buttonStyles} {...props}>
-        {children}
-      </ChakraLink>
-    </NextLink>
+    <ChakraLink as={NextLink} href={href} __css={buttonStyles} {...props}>
+      {children}
+    </ChakraLink>
   );
 }
 
